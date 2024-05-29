@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <footer>
       <hr className="w-[75%] h-[2px] mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-300" />
-      <section className="md:text-center lg:text-nowrap block lg:flex flex-wrap justify-evenly">
+      <section className="mb-10 sm:text-center lg:text-nowrap block lg:flex flex-wrap justify-evenly">
         <nav className="sm:w-[90%] sm:mx-auto lg:mx-0 md:w-96 flex flex-wrap justify-evenly content-center mb-8">
           <AnchorLink href="#bio">
             <ol>Bio</ol>
@@ -23,7 +23,7 @@ const Footer = () => {
             <ol>Contact</ol>
           </AnchorLink>
         </nav>
-        <p>© {date} akshay.dev. All Rights Reserved</p>
+        <p className="text-center">© {date} akshay.dev. All Rights Reserved</p>
       </section>
     </footer>
   );
