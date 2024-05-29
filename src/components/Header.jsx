@@ -7,7 +7,7 @@ const Header = () => {
       <img
         className="w-44 mx-28 my-2 p-2"
         alt="logo"
-        src="../src/assets/file.png"
+        src="../public/file.png"
       />
       <nav className="w-96 flex flex-wrap  content-center">
         <AnchorLink href="#bio">
