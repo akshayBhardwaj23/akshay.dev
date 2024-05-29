@@ -4,11 +4,7 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 const Header = () => {
   return (
     <header className="flex flex-wrap justify-between ">
-      <img
-        className="w-44 mx-28 my-2 p-2"
-        alt="logo"
-        src="../public/file.png"
-      />
+      <img className="w-44 mx-28 my-2 p-2" alt="logo" src="../file.png" />
       <nav className="w-96 flex flex-wrap  content-center">
         <AnchorLink href="#bio">
           <ol className="text-gray-700 mx-2">Bio</ol>
