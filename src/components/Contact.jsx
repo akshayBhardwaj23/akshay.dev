@@ -18,7 +18,9 @@ const Contact = () => {
 
   return (
     <div id="contact" className="m-10">
-      <h1 className="font-bold text-8xl my-10 mx-16 text-gray-700">Contact</h1>
+      <h1 className="font-bold text-7xl md:text-8xl my-10 mx-4 md:mx-16 text-gray-700">
+        Contact
+      </h1>
       <p className="text-gray-700 my-5 text-lg leading-relaxed tracking-wider text-center">
         Connect with me at{" "}
         <span className="text-pink-800 underline">
@@ -43,7 +45,7 @@ const Contact = () => {
           resetForm();
         }}
       >
-        <Form className="mx-auto w-[55%] mt-7">
+        <Form className="mx-auto w-[90%] md:w-[55%] mt-7">
           <label className="text-gray-700" htmlFor="firstName">
             First Name
           </label>

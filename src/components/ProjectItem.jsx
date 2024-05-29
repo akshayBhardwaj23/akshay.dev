@@ -4,7 +4,7 @@ import { SocialIcon } from "react-social-icons";
 const ProjectItem = ({ data }) => {
   const { name, img, desc, stack, link, git } = data;
   return (
-    <div className="w-[25%] m-8 ">
+    <div className="w-[100%] md:w-[25%] m-8 ">
       <a href={link} target="_blank">
         <img
           className="rounded-2xl hover:scale-110 duration-300"

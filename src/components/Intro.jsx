@@ -3,9 +3,9 @@ import SocialMedia from "./SocialMedia";
 
 const Intro = () => {
   return (
-    <div id="bio" className="flex flex-wrap mt-11 mx-32">
-      <section className="w-[80%] m-2 p-10">
-        <h1 className="text-gray-900 text-7xl leading-tight ">
+    <div id="bio" className="flex flex-wrap mt-11 mx-1 md:mx-5 lg:mx-32">
+      <section className="w-[100%] md:w-[80%] md:m-2 p-10">
+        <h1 className="text-gray-900 text-5xl md:text-7xl leading-tight ">
           Hey,👋 <br />
           I'm Akshay Bhardwaj - a full stack developer and amateur enterprenuer
         </h1>

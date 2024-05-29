@@ -7,11 +7,11 @@ const Projects = () => {
     <>
       <h1
         id="projects"
-        className="mx-16 my-10 font-bold text-8xl text-gray-700"
+        className="mx-10 md:mx-16 my-10 font-bold text-7xl md:text-8xl text-gray-700"
       >
         Personal Projects
       </h1>
-      <div className="mx-10 my-12 p-2 flex flex-wrap justify-evenly">
+      <div className="mx-2 md:mx-10 my-12 p-2 flex flex-wrap justify-evenly">
         {projectData.map((project) => (
           <ProjectItem key={project.id} data={project} />
         ))}
