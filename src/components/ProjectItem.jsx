@@ -1,14 +1,17 @@
 import React from "react";
+import { SocialIcon } from "react-social-icons";
 
 const ProjectItem = ({ data }) => {
-  const { name, img, desc, stack, link } = data;
+  const { name, img, desc, stack, link, git } = data;
   return (
     <div className="w-[25%] m-8 ">
-      <img
-        className="rounded-2xl hover:scale-110 duration-300"
-        alt={name}
-        src={img}
-      />
+      <a href={link} target="_blank">
+        <img
+          className="rounded-2xl hover:scale-110 duration-300"
+          alt={name}
+          src={img}
+        />
+      </a>
       <div className="flex flex-wrap">
         {stack.map((item) => (
           <span
@@ -23,6 +26,20 @@ const ProjectItem = ({ data }) => {
       <p className="text-gray-700 mt-5 text-sm leading-relaxed tracking-wider">
         {desc}
       </p>
+      <SocialIcon
+        className="m-2 p-2"
+        bgColor="white"
+        fgColor="gray"
+        target="_blank"
+        url={link}
+      />
+      <SocialIcon
+        className="m-2 p-2"
+        bgColor="white"
+        fgColor="gray"
+        target="_blank"
+        url={git}
+      />
     </div>
   );
 };

@@ -6,14 +6,16 @@ export const projectData = [
     desc: "Welcome to the Game Hub! This repository provides a collection of online games categorized by genre, rating, release date, and other criteria. Whether you're looking for action-packed adventures, brain-teasing puzzles, or immersive simulations, you'll find a diverse selection of games to explore.",
     stack: ["JS", "React Js", "Typescript", "React Router", "Rest API"],
     link: "https://game-hub-lovat-six.vercel.app/",
+    git: "https://github.com/akshayBhardwaj23/game-hub",
   },
   {
     id: 2,
     name: "MovieFlix - GPT",
     img: "./project-images/movieflix-gpt-1.png",
-    desc: "An online movie repository app, that provides you updates on all the latest movies and gives you the ability to find the movies you like with the help of AI. To use this app simply create an account and that's it, you will get access to the repository.",
+    desc: "An online movie repository app, that provides you updates on all the latest movies and gives you the ability to find the movies you like with the help of AI. To use this app simply create an account and that's it, you will get access to the repository. *NOTE: In some areas VPN would be required to access the website",
     stack: ["JS", "React Js", "Redux", "GPT3", "Rest API", "Firebase"],
     link: "https://movieflix-gpt-42247.web.app/",
+    git: "https://github.com/akshayBhardwaj23/MovieFlix-GPT",
   },
   {
     id: 3,
@@ -22,6 +24,7 @@ export const projectData = [
     desc: "Welcome to the Social Media App! This application is built using Next.js and provides a platform for users to connect, share posts, engage in discussions, and create communities. With built-in authentication and authorization features, users can securely access their accounts and manage their activities within the app.",
     stack: ["JS", "React Js", "Typescript", "Next Js", "MongoDB", "ClerkAuth"],
     link: "https://social-media-clone-seven.vercel.app/",
+    git: "https://github.com/akshayBhardwaj23/social_media_clone",
   },
   {
     id: 4,
@@ -30,6 +33,7 @@ export const projectData = [
     desc: "A Video Streaming App! This application is built as a replica of YouTube, allowing users to browse a repository of videos, search for specific videos, and participate in a mock live chat feature. With debouncing implemented on the search functionality, users can enjoy a smooth and responsive search experience.",
     stack: ["JS", "React Js", "Redux", "React-Router"],
     link: "https://youtube-clone-taupe-beta.vercel.app/",
+    git: "https://github.com/akshayBhardwaj23/youtube-clone",
   },
   {
     id: 5,
@@ -38,5 +42,6 @@ export const projectData = [
     desc: "This is a lightweight web application built with ReactJS, TypeScript, and Node.js. It helps you manage and calculate your expenses effortlessly.",
     stack: ["JS", "React Js", "Typescript", "Node Js", "Rest API", "MongoDB"],
     link: "https://expense-tracker-main-4bt4.onrender.com/",
+    git: "https://github.com/akshayBhardwaj23/Expense-tracker",
   },
 ];
