@@ -1,9 +1,11 @@
 import { Field, Form, Formik } from "formik";
 import emailjs from "@emailjs/browser";
-import React from "react";
+import React, { useState } from "react";
 import SocialMedia from "./SocialMedia";
 
 const Contact = () => {
+  const [status, setStatus] = useState("");
+
   const sendMail = (object) => {
     emailjs
       .send(
@@ -12,8 +14,8 @@ const Contact = () => {
         object,
         { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY }
       )
-      .then((res) => console.log(res.text))
-      .catch((err) => console.log(err));
+      .then((res) => setStatus(res.text))
+      .catch((err) => setStatus(err));
   };
 
   return (
@@ -28,12 +30,12 @@ const Contact = () => {
             akshaybhardwaj96.ab@gmail.com
           </a>
         </span>{" "}
-        <br /> or simply fill the contact form below:
+        <br /> or simply connect on below socials:
       </p>
       <div className="text-center">
         <SocialMedia />
       </div>
-      <Formik
+      {/* <Formik
         initialValues={{
           firstName: "",
           lastName: "",
@@ -50,6 +52,7 @@ const Contact = () => {
             First Name
           </label>
           <Field
+            data-testid="fName"
             id="firstName"
             required
             minLength="2"
@@ -62,6 +65,7 @@ const Contact = () => {
             Last Name
           </label>
           <Field
+            data-testid="lName"
             id="lastName"
             minLength="2"
             required
@@ -75,6 +79,7 @@ const Contact = () => {
           </label>
 
           <Field
+            data-testid="email"
             id="email"
             required
             className="w-full border border-black rounded-lg mx-2 mt-2 my-6 p-2"
@@ -88,6 +93,7 @@ const Contact = () => {
           </label>
           <br />
           <Field
+            data-testid="message"
             id="message"
             required
             className="w-full h-36 border border-black rounded-lg mx-2 my-2 p-2"
@@ -97,13 +103,28 @@ const Contact = () => {
           />
 
           <button
+            data-testid="submitBtn"
             type="submit"
             className="m-2 p-2 w-full border border-pink-600 rounded-lg bg-pink-200 text-gray-700"
           >
             Submit
           </button>
         </Form>
-      </Formik>
+      </Formik> */}
+
+      {status !== "" ? (
+        status === "OK" ? (
+          <p data-testid="success" className="text-center text-green-500">
+            Your form has been submitted
+          </p>
+        ) : (
+          <p data-testid="failure" className="text-center text-red-600">
+            Something is wrong, please try again later
+          </p>
+        )
+      ) : (
+        <p></p>
+      )}
     </div>
   );
 };

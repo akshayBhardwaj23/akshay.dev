@@ -26,20 +26,24 @@ const ProjectItem = ({ data }) => {
       <p className="text-gray-700 mt-5 text-sm leading-relaxed tracking-wider">
         {desc}
       </p>
-      <SocialIcon
-        className="m-2 p-2"
-        bgColor="white"
-        fgColor="gray"
-        target="_blank"
-        url={link}
-      />
-      <SocialIcon
-        className="m-2 p-2"
-        bgColor="white"
-        fgColor="gray"
-        target="_blank"
-        url={git}
-      />
+      {link && (
+        <SocialIcon
+          className="m-2 p-2"
+          bgColor="white"
+          fgColor="gray"
+          target="_blank"
+          url={link}
+        />
+      )}
+      {git && (
+        <SocialIcon
+          className="m-2 p-2"
+          bgColor="white"
+          fgColor="gray"
+          target="_blank"
+          url={git}
+        />
+      )}
     </div>
   );
 };

@@ -1,5 +1,22 @@
 export const projectData = [
   {
+    id: 6,
+    name: "MagicStocks.ai",
+    img: "./project-images/magicstocks.ai_.png",
+    desc: "MagicStocks is the smartest stock analysis tool that uses AI model to give insights based on technical, fundamental and sentimental analysis and helps you in making smart investing decisions with your money.",
+    stack: [
+      "React Js",
+      "Typescript",
+      "Next.Js",
+      "Rest API",
+      "MongoDB",
+      "Tailwind CSS",
+      "OpenAI",
+      "Next-Auth",
+    ],
+    link: "https://magicstocks.ai",
+  },
+  {
     id: 1,
     name: "GameHub",
     img: "./project-images/gamehub-2.png",
