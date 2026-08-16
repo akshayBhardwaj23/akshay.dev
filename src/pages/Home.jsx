@@ -15,6 +15,12 @@ const Home = () => {
   const others = projects.filter((p) => !p.featured);
   const current = experience[0];
 
+  // Split the headline around its emphasised fragment so swapping the copy in
+  // site.js needs no JSX change. Falls back to the plain headline if absent.
+  const at = site.emphasis ? site.headline.indexOf(site.emphasis) : -1;
+  const before = at === -1 ? site.headline : site.headline.slice(0, at);
+  const after = at === -1 ? "" : site.headline.slice(at + site.emphasis.length);
+
   return (
     <>
       {/* ---------- The spread ---------- */}
@@ -28,8 +34,9 @@ const Home = () => {
         <div className="grid gap-10 pt-10 md:pt-14 lg:grid-cols-[1.6fr_1fr] lg:gap-16">
           <div>
             <h1 className="display text-[2.75rem] sm:text-6xl lg:text-7xl">
-              I build at the scale where{" "}
-              <em className="italic text-accent">mistakes are expensive</em>.
+              {before}
+              <em className="italic text-accent">{site.emphasis}</em>
+              {after}
             </h1>
 
             <p className="mt-8 max-w-prose text-lg leading-relaxed text-muted">

@@ -10,9 +10,11 @@ export const site = {
   email: "akshaybhardwaj96.ab@gmail.com",
   phone: "+91 7814098274",
   location: "Gurugram, IN",
-  headline: "I build at the scale where mistakes are expensive.",
+  // `emphasis` is the fragment set in italic accent within the headline.
+  headline: "I ship software at scale — and products of my own.",
+  emphasis: "and products of my own",
   summary:
-    "Senior frontend engineer, eight years shipping React, Next.js and TypeScript systems used by millions. I own frontend architecture for platforms serving 2M+ customers, and I build AI products of my own — four live, with paying users.",
+    "Senior frontend engineer, eight years shipping React, Next.js and TypeScript systems used by millions. I own frontend architecture for platforms serving 2M+ customers, and I build AI products of my own.",
   pullQuote:
     "The work I'm proudest of is the unglamorous kind — the regulatory delivery that shipped on time and kept a bank out of penalty range.",
   resumePdf: "/akshay-bhardwaj-resume.pdf",
@@ -44,8 +46,8 @@ export const stats = [
 export const factFile = [
   { term: "Role", value: "Senior Frontend Engineer" },
   { term: "Based", value: "Gurugram, IN" },
+  { term: "Experience", value: "8+ years" },
   { term: "Core stack", value: "React · Next.js · TypeScript" },
-  { term: "Latency cut", value: "−10%" },
-  { term: "Bug rate cut", value: "−20%" },
+  { term: "Also", value: "Node.js · PostgreSQL · GraphQL" },
   { term: "Billed on Upwork", value: upwork.earned },
 ];
