@@ -2,6 +2,19 @@
 
 Personal site and portfolio — React + Vite + Tailwind.
 
+## Design
+
+"The Feature Spread" — a magazine profile printed dark. Dark is the primary
+world; light is its paper counterpart, not an inversion. Print vocabulary
+throughout: square corners, hairline rules in a deliberate weight hierarchy
+(`.rule-hair` / `.rule-section` / `.rule-major` / `.rule-double`), serif display
+with italic emphasis, and sans reserved for editorial furniture (`.kicker`,
+`.folio`). Set in Newsreader and Archivo.
+
+The signature device is **the file** (`components/FactFile.jsx`) — a boxed set of
+hard facts that makes the metrics scannable. Copy leads with scale and shipped
+products; banking appears as evidence, not identity.
+
 ## Running it
 
 ```bash

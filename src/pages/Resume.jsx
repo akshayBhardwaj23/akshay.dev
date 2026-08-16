@@ -34,10 +34,10 @@ const Resume = () => {
       </div>
 
       <article className="resume">
-        <header className="border-b border-line pb-8">
-          <h1 className="display text-5xl">{site.name}</h1>
+        <header className="pb-8"><hr className="rule-major mb-8" />
+          <h1 className="display text-5xl md:text-6xl">{site.name}</h1>
           <p className="mt-2 text-lg text-accent">{site.role}</p>
-          <div className="mt-4 flex flex-wrap gap-x-4 gap-y-1 text-sm text-muted">
+          <div className="mt-4 flex flex-wrap gap-x-4 gap-y-1 font-sans text-sm text-muted">
             <a href={`mailto:${site.email}`}>{site.email}</a>
             <span>{site.phone}</span>
             <span>{site.location}</span>
@@ -57,12 +57,12 @@ const Resume = () => {
         </header>
 
         <section className="pt-8">
-          <h2 className="eyebrow mb-4">Summary</h2>
+          <h2 className="kicker mb-4">Summary</h2>
           <p className="leading-relaxed text-muted">{site.summary}</p>
         </section>
 
         <section className="pt-10">
-          <h2 className="eyebrow mb-6">Experience</h2>
+          <h2 className="kicker mb-6">Experience</h2>
           <div className="space-y-8">
             {experience.map((job) => (
               <div key={`${job.company}-${job.title}`} className="break-inside-avoid">
@@ -71,14 +71,14 @@ const Resume = () => {
                     {job.title}
                     <span className="font-normal text-accent"> · {job.company}</span>
                   </h3>
-                  <span className="font-mono text-xs text-faint">
+                  <span className="folio">
                     {job.start} — {job.end}
                   </span>
                 </div>
                 <ul className="mt-3 space-y-1.5">
                   {job.bullets.map((b) => (
                     <li key={b} className="flex gap-3 text-muted">
-                      <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-faint" />
+                      <span className="mt-2.5 h-px w-3 shrink-0 bg-faint" />
                       <span className="leading-relaxed">{b}</span>
                     </li>
                   ))}
@@ -89,7 +89,7 @@ const Resume = () => {
         </section>
 
         <section className="pt-10">
-          <h2 className="eyebrow mb-6">Skills</h2>
+          <h2 className="kicker mb-6">Skills</h2>
           <dl className="space-y-4">
             {skillGroups.map((g) => (
               <div key={g.group} className="sm:flex sm:gap-6">
@@ -101,7 +101,7 @@ const Resume = () => {
         </section>
 
         <section className="pt-10">
-          <h2 className="eyebrow mb-6">Products &amp; side projects</h2>
+          <h2 className="kicker mb-6">Products &amp; side projects</h2>
           <div className="space-y-5">
             {highlights.map((p) => (
               <div key={p.id} className="break-inside-avoid">
@@ -112,7 +112,7 @@ const Resume = () => {
                         href={p.link}
                         target="_blank"
                         rel="noreferrer noopener"
-                        className="underline decoration-accent underline-offset-4"
+                        className="link-rule"
                       >
                         {p.name}
                       </a>
@@ -120,10 +120,10 @@ const Resume = () => {
                       p.name
                     )}
                   </h3>
-                  <span className="font-mono text-xs text-faint">{p.year}</span>
+                  <span className="folio">{p.year}</span>
                 </div>
                 <p className="mt-1 leading-relaxed text-muted">{p.tagline}</p>
-                <p className="mt-1 font-mono text-xs text-faint">
+                <p className="mt-1 folio">
                   {p.stack.join(" · ")}
                 </p>
               </div>
@@ -132,7 +132,7 @@ const Resume = () => {
         </section>
 
         <section className="pt-10">
-          <h2 className="eyebrow mb-6">Ventures</h2>
+          <h2 className="kicker mb-6">Ventures</h2>
           <ul className="space-y-3">
             {ventures.map((v) => (
               <li key={v.id} className="break-inside-avoid">
@@ -142,7 +142,7 @@ const Resume = () => {
                       href={v.link}
                       target="_blank"
                       rel="noreferrer noopener"
-                      className="underline decoration-accent underline-offset-4"
+                      className="link-rule"
                     >
                       {v.name}
                     </a>
@@ -161,7 +161,7 @@ const Resume = () => {
         </section>
 
         <section className="pt-10">
-          <h2 className="eyebrow mb-6">Awards &amp; recognition</h2>
+          <h2 className="kicker mb-6">Awards &amp; recognition</h2>
           <ul className="space-y-3">
             {awards.map((a) => (
               <li key={a.name} className="break-inside-avoid">
@@ -174,7 +174,7 @@ const Resume = () => {
         </section>
 
         <section className="pt-10">
-          <h2 className="eyebrow mb-6">Education</h2>
+          <h2 className="kicker mb-6">Education</h2>
           <div className="space-y-4">
             {education.map((e) => (
               <div
@@ -185,7 +185,7 @@ const Resume = () => {
                   <h3 className="font-semibold">{e.credential}</h3>
                   <p className="text-muted">{e.school}</p>
                 </div>
-                <span className="font-mono text-xs text-faint">
+                <span className="folio">
                   {e.start} — {e.end}
                 </span>
               </div>

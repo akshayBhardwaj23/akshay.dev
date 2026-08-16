@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import DownloadResume from "../components/DownloadResume";
+import FactFile from "../components/FactFile";
 import ProjectCard from "../components/ProjectCard";
 import Ventures from "../components/Ventures";
 import { projects } from "../data/projects";
@@ -8,11 +9,7 @@ import { awards, experience, skillGroups } from "../data/resume";
 import { useMeta } from "../hooks/useMeta";
 
 const Home = () => {
-  useMeta({
-    title: null,
-    description: site.summary,
-    path: "/",
-  });
+  useMeta({ title: null, description: site.summary, path: "/" });
 
   const featured = projects.filter((p) => p.featured);
   const others = projects.filter((p) => !p.featured);
@@ -20,176 +17,168 @@ const Home = () => {
 
   return (
     <>
-      {/* Hero */}
-      <section className="wrap animate-fade-up pb-20 pt-20 md:pb-28 md:pt-32">
-        <p className="eyebrow mb-6">
-          {site.role} · {site.location}
-        </p>
-        <h1 className="display max-w-4xl text-5xl sm:text-6xl md:text-7xl lg:text-8xl">
-          {site.headline}
-        </h1>
-        <p className="mt-8 max-w-prose text-lg leading-relaxed text-muted">
-          {site.summary}
-        </p>
-
-        <div className="mt-10 flex flex-wrap gap-3">
-          <Link to="/work" className="btn-primary">
-            See the work
-          </Link>
-          <DownloadResume />
-          <Link to="/resume" className="btn-ghost">
-            Résumé
-          </Link>
-          <Link to="/hire" className="btn-ghost">
-            Hire me
-          </Link>
+      {/* ---------- The spread ---------- */}
+      <section className="wrap animate-fade-up pt-12 md:pt-16">
+        <div className="flex flex-wrap items-baseline justify-between gap-3 pb-4">
+          <p className="kicker">Profile</p>
+          <p className="folio">{site.byline}</p>
         </div>
+        <hr className="rule-section" />
 
-        <div className="mt-8 flex flex-wrap gap-x-5 gap-y-2 text-sm text-faint">
-          {socials.map((s) => (
-            <a
-              key={s.label}
-              href={s.url}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="link-underline transition-colors hover:text-ink"
-            >
-              {s.label}
-            </a>
-          ))}
+        <div className="grid gap-10 pt-10 md:pt-14 lg:grid-cols-[1.6fr_1fr] lg:gap-16">
+          <div>
+            <h1 className="display text-[2.75rem] sm:text-6xl lg:text-7xl">
+              I build at the scale where{" "}
+              <em className="italic text-accent">mistakes are expensive</em>.
+            </h1>
+
+            <p className="mt-8 max-w-prose text-lg leading-relaxed text-muted">
+              {site.summary}
+            </p>
+
+            <blockquote className="quote mt-10">{site.pullQuote}</blockquote>
+
+            <div className="mt-10 flex flex-wrap gap-3">
+              <Link to="/work" className="btn-primary">
+                See the work
+              </Link>
+              <DownloadResume />
+              <Link to="/hire" className="btn-ghost">
+                Hire me
+              </Link>
+            </div>
+
+            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 font-sans text-sm text-faint">
+              {socials.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.url}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="link-rule"
+                >
+                  {s.label}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <FactFile />
         </div>
       </section>
 
-      {/* Credibility strip */}
-      <section className="border-y border-line bg-raised">
-        <div className="wrap grid divide-y divide-line py-4 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
-          {stats.map((s) => (
-            <div key={s.label} className="px-2 py-8 text-center">
-              <p className="display text-4xl text-accent md:text-5xl">{s.value}</p>
-              <p className="mt-2 text-sm text-muted">{s.label}</p>
+      {/* ---------- Figures ---------- */}
+      <section className="wrap pt-20">
+        <hr className="rule-major" />
+        <div className="grid sm:grid-cols-3">
+          {stats.map((s, i) => (
+            <div
+              key={s.label}
+              className={`py-8 sm:px-8 sm:first:pl-0 sm:last:pr-0 ${
+                i === 0
+                  ? "border-b border-line sm:border-b-0"
+                  : "border-b border-line sm:border-b-0 sm:border-l"
+              }`}
+            >
+              <p className="display text-5xl tabular-nums text-accent md:text-6xl">
+                {s.value}
+              </p>
+              <p className="mt-3 font-sans text-sm text-muted">{s.label}</p>
             </div>
           ))}
         </div>
+        <hr className="rule-major" />
       </section>
 
-      {/* Current role */}
-      <section className="wrap pt-24">
-        <p className="eyebrow mb-3">Currently</p>
-        <h2 className="display max-w-3xl text-4xl md:text-5xl">
-          {current.title} at{" "}
-          <span className="text-accent">{current.company}</span>
+      {/* ---------- Currently ---------- */}
+      <section className="wrap pt-20">
+        <p className="kicker mb-4">Currently</p>
+        <h2 className="display max-w-3xl text-3xl md:text-4xl">
+          {current.title}, <em className="italic">{current.company}</em>
         </h2>
-        <ul className="mt-8 max-w-prose space-y-3">
-          {current.bullets.slice(0, 3).map((b) => (
-            <li key={b} className="flex gap-3 text-muted">
-              <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-accent" />
-              <span className="leading-relaxed">{b}</span>
-            </li>
+        <div className="mt-8 grid gap-x-12 gap-y-4 md:grid-cols-2">
+          {current.bullets.slice(0, 4).map((b) => (
+            <p key={b} className="text-muted leading-relaxed">
+              {b}
+            </p>
           ))}
-        </ul>
-        <Link
-          to="/about"
-          className="link-underline mt-8 inline-block text-sm text-muted hover:text-ink"
-        >
-          Full background →
+        </div>
+        <Link to="/about" className="link-rule mt-8 inline-block font-sans text-sm text-muted">
+          Full background
         </Link>
       </section>
 
-      {/* Featured work */}
-      <section className="wrap pt-28">
-        <div className="flex items-end justify-between gap-6">
-          <div>
-            <p className="eyebrow mb-3">Selected work</p>
-            <h2 className="display text-4xl md:text-5xl">Products I’ve built</h2>
-          </div>
-          <Link
-            to="/work"
-            className="link-underline hidden shrink-0 text-sm text-muted hover:text-ink sm:block"
-          >
-            View all {projects.length} projects →
-          </Link>
+      {/* ---------- Selected work ---------- */}
+      <section className="wrap pt-24">
+        <div className="flex flex-wrap items-baseline justify-between gap-3 pb-4">
+          <p className="kicker">Selected work</p>
+          <p className="folio">Products · {featured.length}</p>
         </div>
+        <hr className="rule-section" />
 
-        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-10 md:grid-cols-2">
           {featured.map((p) => (
             <ProjectCard key={p.id} project={p} />
           ))}
         </div>
-
-        <Link
-          to="/work"
-          className="link-underline mt-10 inline-block text-sm text-muted hover:text-ink sm:hidden"
-        >
-          View all {projects.length} projects →
-        </Link>
       </section>
 
-      {/* Everything else — so no project is only reachable from /work */}
+      {/* ---------- Also built ---------- */}
       <section className="wrap pt-20">
-        <p className="eyebrow mb-6">Also built</p>
-        <ul className="divide-y divide-line border-y border-line">
+        <p className="kicker mb-5">Also built</p>
+        <hr className="rule-hair" />
+        <ul>
           {others.map((p) => (
-            <li key={p.id}>
+            <li key={p.id} className="border-b border-line">
               <a
                 href={p.link}
                 target="_blank"
                 rel="noreferrer noopener"
                 className="group flex flex-col gap-1 py-5 sm:flex-row sm:items-baseline sm:gap-6"
               >
-                <span className="w-56 shrink-0 font-display text-xl transition-colors group-hover:text-accent">
+                <span className="w-56 shrink-0 text-xl transition-colors group-hover:text-accent">
                   {p.name}
                 </span>
-                <span className="flex-1 text-sm text-muted">{p.tagline}</span>
-                <span className="font-mono text-xs text-faint">
-                  {p.stack.slice(0, 3).join(" · ")}
-                </span>
+                <span className="flex-1 text-muted">{p.tagline}</span>
+                <span className="folio shrink-0">{p.stack.slice(0, 3).join(" · ")}</span>
               </a>
             </li>
           ))}
         </ul>
       </section>
 
-      {/* Ventures */}
-      <Ventures intro="Alongside engineering, I’ve built and sold things of my own — an ecommerce brand, an info product, and independent contract work." />
+      <Ventures intro="Alongside engineering, I've built and sold things of my own — an ecommerce brand, an info product, and independent contract work." />
 
-      {/* Recognition */}
-      <section className="wrap pt-28">
-        <p className="eyebrow mb-3">Recognition</p>
-        <h2 className="display text-4xl md:text-5xl">Awards</h2>
-        <ul className="mt-12 divide-y divide-line border-y border-line">
+      {/* ---------- Recognition ---------- */}
+      <section className="wrap pt-24">
+        <p className="kicker mb-5">Recognition</p>
+        <hr className="rule-section" />
+        <ul>
           {awards.map((a) => (
             <li
               key={a.name}
-              className="flex flex-col gap-1 py-5 sm:flex-row sm:items-baseline sm:gap-8"
+              className="flex flex-col gap-1 border-b border-line py-5 sm:flex-row sm:items-baseline sm:gap-8"
             >
-              <span className="w-64 shrink-0 font-medium">{a.name}</span>
-              <span className="flex-1 text-sm text-muted">{a.note}</span>
-              <span className="font-mono text-xs text-faint">{a.issuer}</span>
+              <span className="w-72 shrink-0">{a.name}</span>
+              <span className="flex-1 text-muted">{a.note}</span>
+              <span className="folio shrink-0">{a.issuer}</span>
             </li>
           ))}
         </ul>
       </section>
 
-      {/* Skills */}
-      <section className="wrap pt-28">
-        <p className="eyebrow mb-3">Toolkit</p>
-        <h2 className="display text-4xl md:text-5xl">What I work with</h2>
-        <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+      {/* ---------- Toolkit ---------- */}
+      <section className="wrap pt-24">
+        <p className="kicker mb-5">Toolkit</p>
+        <hr className="rule-section" />
+        <dl className="mt-8 grid gap-x-12 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
           {skillGroups.map((g) => (
             <div key={g.group}>
-              <h3 className="font-mono text-xs uppercase tracking-[0.18em] text-accent">
-                {g.group}
-              </h3>
-              <ul className="mt-5 space-y-2.5">
-                {g.items.map((i) => (
-                  <li key={i} className="text-muted">
-                    {i}
-                  </li>
-                ))}
-              </ul>
+              <dt className="folio mb-2">{g.group}</dt>
+              <dd className="text-muted leading-relaxed">{g.items.join(" · ")}</dd>
             </div>
           ))}
-        </div>
+        </dl>
       </section>
     </>
   );

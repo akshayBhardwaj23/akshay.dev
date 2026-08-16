@@ -1,7 +1,13 @@
-const PageHeader = ({ eyebrow, title, children }) => (
-  <header className="wrap animate-fade-up pb-12 pt-16 md:pb-16 md:pt-24">
-    {eyebrow && <p className="eyebrow mb-4">{eyebrow}</p>}
-    <h1 className="display text-5xl md:text-7xl">{title}</h1>
+const PageHeader = ({ eyebrow, title, folio, children }) => (
+  <header className="wrap animate-fade-up pt-12 md:pt-16">
+    <div className="flex flex-wrap items-baseline justify-between gap-3 pb-4">
+      {eyebrow && <p className="kicker">{eyebrow}</p>}
+      {folio && <p className="folio">{folio}</p>}
+    </div>
+    <hr className="rule-section" />
+    <h1 className="display mt-10 max-w-4xl text-[2.5rem] sm:text-5xl md:text-6xl">
+      {title}
+    </h1>
     {children && (
       <div className="mt-6 max-w-prose text-lg leading-relaxed text-muted">
         {children}

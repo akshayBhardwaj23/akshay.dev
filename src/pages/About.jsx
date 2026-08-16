@@ -9,7 +9,7 @@ import { useMeta } from "../hooks/useMeta";
 const About = () => {
   useMeta({
     title: "About",
-    description: `About ${site.name} — ${site.role} at National Australia Bank. 8+ years building React and Next.js applications for banking, insurance and AI products.`,
+    description: `About ${site.name} — ${site.role}. Eight years shipping React and Next.js systems used by millions, plus four AI products built independently.`,
     path: "/about",
   });
 
@@ -44,7 +44,7 @@ const About = () => {
               href="https://snaptix.ai"
               target="_blank"
               rel="noreferrer noopener"
-              className="text-ink underline decoration-accent underline-offset-4"
+              className="link-rule text-ink"
             >
               Snaptix
             </a>{" "}
@@ -53,7 +53,7 @@ const About = () => {
               href="https://zyyp.ai"
               target="_blank"
               rel="noreferrer noopener"
-              className="text-ink underline decoration-accent underline-offset-4"
+              className="link-rule text-ink"
             >
               Zyyp
             </a>{" "}
@@ -62,7 +62,7 @@ const About = () => {
               href="https://startup-analyst-xi.vercel.app/"
               target="_blank"
               rel="noreferrer noopener"
-              className="text-ink underline decoration-accent underline-offset-4"
+              className="link-rule text-ink"
             >
               Startup Analyst
             </a>{" "}
@@ -76,7 +76,7 @@ const About = () => {
             adoption across squads. If you want the short version, the{" "}
             <Link
               to="/resume"
-              className="text-ink underline decoration-accent underline-offset-4"
+              className="link-rule text-ink"
             >
               résumé
             </Link>{" "}
@@ -85,7 +85,7 @@ const About = () => {
         </div>
 
         <aside className="space-y-8">
-          <div className="card overflow-hidden">
+          <div className="box overflow-hidden">
             {/* Portrait ratio + top anchoring so a full-body shot keeps the face. */}
             <img
               src={site.avatar}
@@ -93,7 +93,7 @@ const About = () => {
               className="aspect-[3/4] w-full object-cover object-top"
             />
           </div>
-          <div className="space-y-3 text-sm">
+          <div className="space-y-3 font-sans text-sm">
             <div className="flex justify-between border-b border-line pb-3">
               <span className="text-faint">Based in</span>
               <span>{site.location}</span>
@@ -113,7 +113,7 @@ const About = () => {
           </div>
 
           <div>
-            <p className="eyebrow mb-4">Domains</p>
+            <p className="kicker mb-4">Domains</p>
             <div className="flex flex-wrap gap-1.5">
               {domains.map((d) => (
                 <span key={d} className="tag">
@@ -127,22 +127,22 @@ const About = () => {
 
       {/* Experience */}
       <section className="wrap pt-24">
-        <p className="eyebrow mb-3">Career</p>
+        <p className="kicker mb-3">Career</p>
         <h2 className="display text-4xl md:text-5xl">Experience</h2>
 
         <ol className="mt-12 border-l border-line">
           {experience.map((job) => (
             <li key={`${job.company}-${job.title}`} className="relative pb-12 pl-8 last:pb-0">
-              <span className="absolute -left-[5px] top-2 h-2.5 w-2.5 rounded-full bg-accent" />
-              <p className="font-mono text-xs text-faint">
+              <span className="absolute -left-[5px] top-2 h-1.5 w-1.5 bg-accent" />
+              <p className="folio">
                 {job.start} — {job.end} · {job.location}
               </p>
-              <h3 className="mt-2 font-display text-2xl">{job.title}</h3>
+              <h3 className="display mt-2 text-2xl">{job.title}</h3>
               <p className="text-accent">{job.company}</p>
               <ul className="mt-4 max-w-prose space-y-2">
                 {job.bullets.map((b) => (
                   <li key={b} className="flex gap-3 text-muted">
-                    <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-faint" />
+                    <span className="mt-2.5 h-px w-3 shrink-0 bg-faint" />
                     <span className="leading-relaxed">{b}</span>
                   </li>
                 ))}
@@ -154,17 +154,17 @@ const About = () => {
 
       {/* Education */}
       <section className="wrap pt-16">
-        <p className="eyebrow mb-3">Education</p>
+        <p className="kicker mb-3">Education</p>
         {education.map((e) => (
           <div
             key={e.school}
             className="mt-6 flex flex-wrap items-baseline justify-between gap-2 border-t border-line pt-6"
           >
             <div>
-              <h3 className="font-display text-2xl">{e.credential}</h3>
+              <h3 className="display text-2xl">{e.credential}</h3>
               <p className="text-muted">{e.school}</p>
             </div>
-            <span className="font-mono text-xs text-faint">
+            <span className="folio">
               {e.start} — {e.end}
             </span>
           </div>
@@ -175,14 +175,12 @@ const About = () => {
 
       {/* Skills */}
       <section className="wrap pt-24">
-        <p className="eyebrow mb-3">Toolkit</p>
+        <p className="kicker mb-3">Toolkit</p>
         <h2 className="display text-4xl md:text-5xl">Skills</h2>
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {skillGroups.map((g) => (
-            <div key={g.group} className="card p-6">
-              <h3 className="font-mono text-xs uppercase tracking-[0.18em] text-accent">
-                {g.group}
-              </h3>
+            <div key={g.group} className="box p-6">
+              <h3 className="kicker">{g.group}</h3>
               <div className="mt-5 flex flex-wrap gap-1.5">
                 {g.items.map((i) => (
                   <span key={i} className="tag">

@@ -15,9 +15,13 @@ const renderAt = (path) =>
   );
 
 describe("routing", () => {
-  it("renders the home page headline", () => {
+  it("renders the home page headline and summary", () => {
     renderAt("/");
-    expect(screen.getByText(site.headline)).toBeInTheDocument();
+    // The headline is broken up by an <em>, so match the heading's full text.
+    expect(
+      screen.getByRole("heading", { level: 1 })
+    ).toHaveTextContent(site.headline);
+    expect(screen.getByText(site.summary)).toBeInTheDocument();
   });
 
   it("renders the work page with every project", () => {

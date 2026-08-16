@@ -32,34 +32,34 @@ const Work = () => {
 
   return (
     <>
-      <PageHeader eyebrow="Portfolio" title="Work">
+      <PageHeader eyebrow="Portfolio" folio={`${projects.length} projects`} title="Work">
         Everything I’ve built and shipped — AI products of my own, and the
         projects I used to learn things properly.
       </PageHeader>
 
       <div className="wrap">
-        <div className="flex flex-wrap items-center gap-2 border-b border-line pb-6">
+        <div className="flex flex-wrap items-center gap-2 pb-6">
           {availableKinds.map((k) => (
             <button
               key={k.id}
               type="button"
               onClick={() => setKind(k.id)}
-              className={`rounded-full border px-4 py-1.5 text-sm transition-colors ${
+              className={`border px-4 py-1.5 font-sans text-[0.8125rem] uppercase tracking-[0.1em] transition-colors ${
                 kind === k.id
                   ? "border-ink bg-ink text-surface"
-                  : "border-line text-muted hover:border-ink/40 hover:text-ink"
+                  : "border-line text-muted hover:border-accent hover:text-accent"
               }`}
             >
               {k.label}
             </button>
           ))}
 
-          <label className="ml-auto flex items-center gap-2 text-sm text-muted">
+          <label className="ml-auto flex items-center gap-2 font-sans text-sm text-muted">
             <span className="hidden sm:inline">Stack</span>
             <select
               value={stack}
               onChange={(e) => setStack(e.target.value)}
-              className="rounded-full border border-line bg-raised px-3 py-1.5 text-sm text-ink outline-none focus:border-ink/40"
+              className="border border-line bg-raised px-3 py-1.5 font-sans text-sm text-ink outline-none focus:border-accent"
             >
               {stacks.map((s) => (
                 <option key={s} value={s}>
@@ -70,12 +70,13 @@ const Work = () => {
           </label>
         </div>
 
-        <p className="mt-6 font-mono text-xs text-faint">
-          {visible.length} {visible.length === 1 ? "project" : "projects"}
+        <hr className="rule-hair" />
+        <p className="folio mt-5">
+          Showing {visible.length} of {projects.length}
         </p>
 
         {visible.length > 0 ? (
-          <div className="mt-8 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 grid gap-12 md:grid-cols-2">
             {visible.map((p) => (
               <ProjectCard key={p.id} project={p} />
             ))}

@@ -26,7 +26,7 @@ const services = [
 ];
 
 const credentials = [
-  "8+ years in production engineering across banking, insurance and trading",
+  "8+ years shipping production engineering at scale — insurance, banking and trading systems",
   "Currently leading frontend architecture for platforms serving 2M+ customers",
   "Four AI products shipped independently, with real users and paid tiers",
   "Top 10 nationally, Google GenAI Exchange Hackathon",
@@ -35,7 +35,7 @@ const credentials = [
 const Hire = () => {
   useMeta({
     title: "Hire me",
-    description: `${site.name} — Senior Frontend Engineer available for freelance and contract work. 8+ years across banking and fintech, four AI products shipped, ${upwork.earned} billed independently on Upwork.`,
+    description: `${site.name} — Senior frontend engineer available for freelance and contract work. Eight years at scale, four AI products shipped, ${upwork.earned} billed independently on Upwork.`,
     path: "/hire",
   });
 
@@ -43,7 +43,7 @@ const Hire = () => {
 
   return (
     <>
-      <PageHeader eyebrow="Freelance & contract" title="Hire me">
+      <PageHeader eyebrow="Freelance & contract" folio="Available now" title="Hire me">
         I’m a senior engineer who has spent eight years shipping software where
         downtime costs money — and who builds and sells products of his own on
         the side. If you need something built properly the first time, that
@@ -52,12 +52,12 @@ const Hire = () => {
 
       {/* Credentials */}
       <section className="wrap">
-        <div className="card p-8 md:p-12">
-          <p className="eyebrow mb-6">Track record</p>
+        <div className="box p-8 md:p-12">
+          <p className="kicker mb-6">Track record</p>
           <ul className="space-y-4">
             {credentials.map((c) => (
               <li key={c} className="flex gap-4 text-lg">
-                <span className="mt-3 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                <span className="mt-3 h-px w-4 shrink-0 bg-accent" />
                 <span className="leading-relaxed">{c}</span>
               </li>
             ))}
@@ -68,7 +68,7 @@ const Hire = () => {
               <p className="display text-4xl text-accent">{upwork.earned}</p>
               <p className="text-muted">lifetime billed on Upwork</p>
             </div>
-            <p className="mt-2 max-w-prose text-sm text-faint">
+            <p className="mt-2 max-w-prose font-sans text-sm text-faint">
               Independent engagements focused on {upwork.focus} — evaluating and
               improving how AI models reason about code.
             </p>
@@ -86,12 +86,12 @@ const Hire = () => {
 
       {/* Services */}
       <section className="wrap pt-24">
-        <p className="eyebrow mb-3">Services</p>
+        <p className="kicker mb-3">Services</p>
         <h2 className="display text-4xl md:text-5xl">What I can build for you</h2>
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           {services.map((s) => (
-            <div key={s.title} className="card p-7">
-              <h3 className="font-display text-2xl">{s.title}</h3>
+            <div key={s.title} className="box p-7">
+              <h3 className="display text-2xl">{s.title}</h3>
               <p className="mt-3 leading-relaxed text-muted">{s.body}</p>
             </div>
           ))}
@@ -101,11 +101,11 @@ const Hire = () => {
       {/* Testimonials */}
       {testimonials.length > 0 && (
         <section className="wrap pt-24">
-          <p className="eyebrow mb-3">Reviews</p>
+          <p className="kicker mb-3">Reviews</p>
           <h2 className="display text-4xl md:text-5xl">What clients say</h2>
           <div className="mt-12 grid gap-6 md:grid-cols-2">
             {testimonials.map((t, i) => (
-              <figure key={i} className="card p-7">
+              <figure key={i} className="box p-7">
                 {t.rating && (
                   <p className="text-accent" aria-label={`${t.rating} out of 5`}>
                     {"★".repeat(t.rating)}
@@ -114,7 +114,7 @@ const Hire = () => {
                 <blockquote className="mt-4 leading-relaxed text-ink">
                   &ldquo;{t.quote}&rdquo;
                 </blockquote>
-                <figcaption className="mt-5 text-sm text-faint">
+                <figcaption className="mt-5 font-sans text-sm text-faint">
                   {t.author}
                   {t.role && ` · ${t.role}`}
                   {t.source && ` · ${t.source}`}
@@ -127,13 +127,13 @@ const Hire = () => {
 
       {/* Proof: my own products */}
       <section className="wrap pt-24">
-        <p className="eyebrow mb-3">Proof</p>
+        <p className="kicker mb-3">Proof</p>
         <h2 className="display text-4xl md:text-5xl">Products I’ve shipped</h2>
         <p className="mt-5 max-w-prose leading-relaxed text-muted">
           Not case studies from a portfolio — live products I designed, built,
           priced and support myself.
         </p>
-        <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-12 md:grid-cols-2">
           {products.map((p) => (
             <ProjectCard key={p.id} project={p} />
           ))}
@@ -142,7 +142,7 @@ const Hire = () => {
 
       {/* CTA */}
       <section className="wrap pt-24">
-        <div className="card p-10 text-center md:p-16">
+        <div className="box p-10 text-center md:p-16">
           <h2 className="display text-4xl md:text-5xl">Got a project in mind?</h2>
           <p className="mx-auto mt-5 max-w-prose leading-relaxed text-muted">
             Tell me what you’re building and roughly where it needs to land. I’ll
