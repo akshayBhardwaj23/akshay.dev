@@ -28,7 +28,10 @@ const Nav = ({ theme, toggleTheme }) => {
   const [scrolled, setScrolled] = useState(false);
   const { pathname } = useLocation();
 
-  useEffect(() => setOpen(false), [pathname]);
+  // Block body so the effect never returns a value React would call as cleanup.
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);

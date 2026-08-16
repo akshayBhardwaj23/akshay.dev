@@ -13,7 +13,12 @@ import Work from "./pages/Work";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
-  useEffect(() => window.scrollTo(0, 0), [pathname]);
+  // Block body, not a concise arrow: React treats an effect's return value as
+  // the cleanup function, and window.scrollTo is not guaranteed to return
+  // undefined once an extension or smooth-scroll polyfill has patched it.
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return null;
 };
 
