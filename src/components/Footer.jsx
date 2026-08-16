@@ -49,11 +49,10 @@ const Footer = () => (
       </div>
 
       <hr className="rule-hair" />
-      <div className="flex flex-col gap-2 py-6 sm:flex-row sm:justify-between">
+      <div className="py-6">
         <p className="folio">
           © {new Date().getFullYear()} {site.name}
         </p>
-        <p className="folio">Set in Newsreader &amp; Archivo</p>
       </div>
     </div>
   </footer>
