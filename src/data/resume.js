@@ -60,12 +60,12 @@ export const awards = [
   },
   {
     name: "Star Award",
-    issuer: "Newgen Software",
+    issuer: "National Australia Bank",
     note: "Sustained excellence in product delivery.",
   },
   {
     name: "Spot Award",
-    issuer: "Newgen Software",
+    issuer: "National Australia Bank",
     note: "Standout individual contribution.",
   },
 ];
