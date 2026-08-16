@@ -1,32 +1,59 @@
-import React, { useEffect, useState } from "react";
-import AnchorLink from "react-anchor-link-smooth-scroll";
+import { Link } from "react-router-dom";
+import { site, socials } from "../data/site";
 
-const Footer = () => {
-  const [date, setDate] = useState();
-  useEffect(() => {
-    const d = new Date();
-    setDate(d.getFullYear());
-  }, []);
+const Footer = () => (
+  <footer className="mt-32 border-t border-line">
+    <div className="wrap grid gap-10 py-14 md:grid-cols-[2fr_1fr_1fr]">
+      <div className="max-w-sm">
+        <p className="font-display text-2xl">Let’s build something.</p>
+        <p className="mt-3 text-sm leading-relaxed text-muted">
+          Available for freelance and contract work.
+        </p>
+        <a
+          href={`mailto:${site.email}`}
+          className="link-underline mt-4 inline-block text-sm text-ink"
+        >
+          {site.email}
+        </a>
+      </div>
 
-  return (
-    <footer>
-      <hr className="w-[75%] h-[2px] mx-auto my-4 bg-gray-100 border-0 rounded md:my-10 dark:bg-gray-300" />
-      <section className="mb-10 sm:text-center lg:text-nowrap block lg:flex flex-wrap justify-evenly">
-        <nav className="sm:w-[90%] sm:mx-auto lg:mx-0 md:w-96 flex flex-wrap justify-evenly content-center mb-8">
-          <AnchorLink href="#bio">
-            <ol>Bio</ol>
-          </AnchorLink>
-          <AnchorLink href="#projects">
-            <ol>Projects</ol>
-          </AnchorLink>
-          <AnchorLink href="#contact">
-            <ol>Contact</ol>
-          </AnchorLink>
-        </nav>
-        <p className="text-center">© {date} akshay.dev. All Rights Reserved</p>
-      </section>
-    </footer>
-  );
-};
+      <nav className="flex flex-col gap-3 text-sm">
+        <p className="eyebrow mb-1">Site</p>
+        {[
+          { to: "/work", label: "Work" },
+          { to: "/about", label: "About" },
+          { to: "/hire", label: "Hire me" },
+          { to: "/resume", label: "Résumé" },
+        ].map((r) => (
+          <Link key={r.to} to={r.to} className="text-muted transition-colors hover:text-ink">
+            {r.label}
+          </Link>
+        ))}
+      </nav>
+
+      <nav className="flex flex-col gap-3 text-sm">
+        <p className="eyebrow mb-1">Elsewhere</p>
+        {socials.map((s) => (
+          <a
+            key={s.label}
+            href={s.url}
+            target="_blank"
+            rel="noreferrer noopener"
+            className="text-muted transition-colors hover:text-ink"
+          >
+            {s.label}
+          </a>
+        ))}
+      </nav>
+    </div>
+
+    <div className="wrap flex flex-col gap-2 border-t border-line py-6 text-xs text-faint sm:flex-row sm:justify-between">
+      <p>
+        © {new Date().getFullYear()} {site.name}. All rights reserved.
+      </p>
+      <p className="font-mono">Built with React, Vite &amp; Tailwind.</p>
+    </div>
+  </footer>
+);
 
 export default Footer;

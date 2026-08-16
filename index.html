@@ -1,19 +1,79 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap"
-      rel="stylesheet"
+
+    <title>Akshay Bhardwaj — Senior Frontend Engineer</title>
+    <meta
+      name="description"
+      content="Senior Frontend Engineer with 8+ years building scalable React, Next.js and TypeScript applications. Currently at National Australia Bank, leading frontend architecture for platforms serving 2M+ customers."
     />
+    <meta name="author" content="Akshay Bhardwaj" />
+    <meta name="theme-color" content="#0c0c0e" />
+
+    <!-- Open Graph / social previews -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Akshay Bhardwaj" />
+    <meta property="og:title" content="Akshay Bhardwaj — Senior Frontend Engineer" />
+    <meta
+      property="og:description"
+      content="Senior Frontend Engineer with 8+ years building scalable React, Next.js and TypeScript applications. Currently at National Australia Bank, leading frontend architecture for platforms serving 2M+ customers."
+    />
+    <!-- TODO(akshay): add a 1200x630 preview image at public/og.png -->
+    <meta property="og:image" content="/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="/og.png" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/file.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
 
-    <title>Akshay.Dev - Developer + Entrepreneur</title>
+    <!-- Apply the stored theme before paint so there's no light-mode flash. -->
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("theme");
+          if (
+            t === "dark" ||
+            (!t && matchMedia("(prefers-color-scheme: dark)").matches)
+          ) {
+            document.documentElement.classList.add("dark");
+          }
+        } catch (e) {}
+      })();
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Akshay Bhardwaj",
+        "jobTitle": "Senior Frontend Engineer",
+        "worksFor": { "@type": "Organization", "name": "National Australia Bank" },
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": "Punjabi University" },
+        "email": "akshaybhardwaj96.ab@gmail.com",
+        "sameAs": [
+          "https://github.com/akshayBhardwaj23",
+          "https://www.linkedin.com/in/akshaybhardwaj-23/",
+          "https://www.upwork.com/freelancers/~01a95eb0c7c6b15f6b"
+        ],
+        "knowsAbout": [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "GraphQL",
+          "Node.js",
+          "Micro-frontends"
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
