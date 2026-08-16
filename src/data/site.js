@@ -9,7 +9,7 @@ export const site = {
   headline: "I build the software banks and businesses run on.",
   summary:
     "Senior Frontend Engineer with 8+ years building scalable, performant web applications in React, Next.js, TypeScript and GraphQL. Currently at National Australia Bank, where I lead frontend architecture for trading and internet banking platforms serving 2M+ customers. Outside of that I ship AI products of my own.",
-  resumePdf: "/akshay-bhardwaj-resume.pdf", // TODO(akshay): drop your PDF at public/
+  resumePdf: "/akshay-bhardwaj-resume.pdf",
   avatar: "/profile.jpeg", // TODO(akshay): a proper headshot would serve you better
 };
 

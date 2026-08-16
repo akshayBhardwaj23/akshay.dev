@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import DownloadResume from "../components/DownloadResume";
 import PageHeader from "../components/PageHeader";
 import Ventures from "../components/Ventures";
 import { domains, education, experience, skillGroups } from "../data/resume";
@@ -197,6 +198,7 @@ const About = () => {
           <Link to="/resume" className="btn-primary">
             Full résumé
           </Link>
+          <DownloadResume />
           <Link to="/contact" className="btn-ghost">
             Get in touch
           </Link>

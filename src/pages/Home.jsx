@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import DownloadResume from "../components/DownloadResume";
 import ProjectCard from "../components/ProjectCard";
 import Ventures from "../components/Ventures";
 import { projects } from "../data/projects";
@@ -35,6 +36,7 @@ const Home = () => {
           <Link to="/work" className="btn-primary">
             See the work
           </Link>
+          <DownloadResume />
           <Link to="/resume" className="btn-ghost">
             Résumé
           </Link>

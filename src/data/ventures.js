@@ -10,7 +10,7 @@ export const ventures = [
     metric: "$100K",
     metricLabel: "revenue in 2 years",
     desc: "Bootstrapped and scaled a direct-to-consumer ecommerce store to $100K in revenue over two years, running end-to-end operations, fulfilment and growth.",
-    link: null, // TODO(akshay): add the store URL if it’s still live
+    link: "https://slickstiles.com",
   },
   {
     id: "akshaygmat",

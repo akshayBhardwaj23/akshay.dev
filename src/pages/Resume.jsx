@@ -4,6 +4,7 @@ import {
   experience,
   skillGroups,
 } from "../data/resume";
+import DownloadResume from "../components/DownloadResume";
 import { projects } from "../data/projects";
 import { ventures } from "../data/ventures";
 import { site, socials } from "../data/site";
@@ -22,9 +23,7 @@ const Resume = () => {
     <div className="wrap max-w-prose pb-10 pt-16 md:max-w-3xl md:pt-24">
       {/* Actions — hidden when printing */}
       <div className="mb-12 flex flex-wrap gap-3 print:hidden">
-        <a href={site.resumePdf} download className="btn-primary">
-          Download PDF
-        </a>
+        <DownloadResume variant="primary" label="Download PDF" />
         <button
           type="button"
           onClick={() => window.print()}
