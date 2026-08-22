@@ -106,8 +106,16 @@ export const skillGroups = [
     items: ["Jest", "React Testing Library", "Vitest", "CI/CD", "Git"],
   },
   {
-    group: "AI",
-    items: ["OpenAI API", "Gemini", "GenAI product design"],
+    group: "AI & model evaluation",
+    items: [
+      "OpenAI API",
+      "Gemini",
+      "GenAI product design",
+      "LLM code evaluation",
+      "Model output ranking",
+      "Failure-case analysis",
+      "Rubric design",
+    ],
   },
   {
     group: "Product & leadership",

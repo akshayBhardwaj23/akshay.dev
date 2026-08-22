@@ -69,8 +69,7 @@ const Hire = () => {
               <p className="text-muted">lifetime billed on Upwork</p>
             </div>
             <p className="mt-2 max-w-prose font-sans text-sm text-faint">
-              Independent engagements focused on {upwork.focus} — evaluating and
-              improving how AI models reason about code.
+              {upwork.focusDetail}
             </p>
             <a
               href={upwork.profileUrl}

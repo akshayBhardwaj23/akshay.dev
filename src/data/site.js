@@ -24,8 +24,10 @@ export const site = {
 export const upwork = {
   profileUrl: "https://www.upwork.com/freelancers/~01a95eb0c7c6b15f6b",
   earned: "$26K+",
-  // Engagements were AI/coding model training, not client web builds.
-  focus: "AI & coding model training",
+  // Engagements were AI/coding model training and evaluation, not client web
+  // builds — see resume.js skillGroups for the specific task breakdown.
+  focusDetail:
+    "Writing and reviewing reference code, ranking model-generated solutions for correctness and quality, hunting for failure cases, and writing the rubrics used to grade coding-model output — across Python and JavaScript/TypeScript.",
 };
 
 export const socials = [

@@ -27,7 +27,7 @@ export const ventures = [
     kind: "Freelance",
     metric: upwork.earned,
     metricLabel: "lifetime billed",
-    desc: `Independent engagements focused on ${upwork.focus} — evaluating and improving how AI models reason about code.`,
+    desc: upwork.focusDetail,
     link: upwork.profileUrl,
   },
 ];
