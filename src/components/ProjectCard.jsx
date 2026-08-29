@@ -4,22 +4,38 @@ const ProjectCard = ({ project }) => {
   // Square logos are letterboxed rather than crop-filled, which would cut them off.
   const isLogo = fit === "contain";
 
+  const media = (
+    <div className="relative aspect-[16/10] overflow-hidden border border-line bg-raised">
+      {img ? (
+        <img
+          src={img}
+          alt={isLogo ? `${name} logo` : `${name} screenshot`}
+          loading="lazy"
+          className={`h-full w-full transition-transform duration-700 ease-out group-hover:scale-[1.03] ${
+            isLogo ? "object-contain p-12" : "object-cover object-top"
+          }`}
+        />
+      ) : (
+        <div className="folio grid h-full place-items-center">No preview</div>
+      )}
+    </div>
+  );
+
   return (
     <article className="group">
-      <div className="relative aspect-[16/10] overflow-hidden border border-line bg-raised">
-        {img ? (
-          <img
-            src={img}
-            alt={isLogo ? `${name} logo` : `${name} screenshot`}
-            loading="lazy"
-            className={`h-full w-full transition-transform duration-700 ease-out group-hover:scale-[1.03] ${
-              isLogo ? "object-contain p-12" : "object-cover object-top"
-            }`}
-          />
-        ) : (
-          <div className="folio grid h-full place-items-center">No preview</div>
-        )}
-      </div>
+      {link ? (
+        <a
+          href={link}
+          target="_blank"
+          rel="noreferrer noopener"
+          aria-label={`Open ${name} live site`}
+          className="block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+        >
+          {media}
+        </a>
+      ) : (
+        media
+      )}
 
       <div className="flex items-baseline justify-between gap-4 pt-5">
         <h3 className="display text-3xl">{name}</h3>
